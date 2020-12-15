@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="icon/iconfont.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #nav {
+            height: 721px;
+            width: 180px;
+            background-color: rgb(48, 65, 86);
+            list-style: none;
+            float: left;
+        }
+
+        #nav div {
+            width: 100%;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        #nav span {
+            float: left;
+            margin-right: 20px;
+            /* margin-top: 5px; */
+            color: #ffffff;
+            font-size: 20px;
+        }
+
+        #nav p {
+            color: #ffffff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #nav ul {
+            display: none;
+            list-style: none;
+        }
+
+        #nav li {
+            width: 180px;
+            height: 50px;
+            line-height: 50px;
+            color: #ffffff;
+            margin-left: 10px;
+        }
+
+        #nav li p {
+            font-size: 16px;
+        }
+
+        #nav li span {
+            font-size: 16px;
+        }
+
+        .img-box {
+            position: relative;
+            margin: auto;
+            width: 1000px;
+            height: 600px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .img-box ul {
+            margin: 10px 0;
+            padding: 0;
+            width: 9999px;
+            transition: all 0.5s;
+        }
+
+        /*//自动播放*/
+        .img-box .img-list {
+            animation: marginLeft 12s infinite;
+        }
+
+        .img-box li {
+            float: left;
+            width: 1000px;
+            height: 600px;
+        }
+
+        .img-list img {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes marginLeft {
+            0% {
+                margin-left: 0;
+            }
+
+            20.5% {
+                margin-left: 0;
+            }
+
+            25.5% {
+                margin-left: -1000px;
+            }
+
+            46% {
+                margin-left: -1000px;
+            }
+
+            51% {
+                margin-left: -2000px;
+            }
+
+            71.5% {
+                margin-left: -2000px;
+            }
+
+            76.5% {
+                margin-left: -3000px;
+            }
+
+            99.999% {
+                margin-left: -3000px;
+            }
+
+            100% {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <div>
+            <span class="iconfont icon-shouye-yes"></span>
+            <p>首页</p>
+            <ul>
+                <li>
+                    <span class="iconfont icon-shouye-yes"></span>
+                    <a href="photo.html"><p>宠物美图</p></a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <span class="iconfont icon-shouye-yes"></span>
+            <p>宠物</p>
+            <ul>
+                <li>
+                    <span class="iconfont icon-shouye-yes"></span>
+                    <p>宠物列表</p>
+                </li>
+                <li>
+                    <span class="iconfont icon-shouye-yes"></span>
+                    <p>添加宠物</p>
+                </li>
+                <li>
+                    <span class="iconfont icon-shouye-yes"></span>
+                    <p>添加宠物</p>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <span class="iconfont icon-shouye-yes"></span>
+            <p>订单</p>
+            <ul>
+                <li>
+                    <span class="iconfont icon-shouye-yes"></span>
+                    <p>订单列表</p>
+                </li>
+                <li>
+                    <span class="iconfont icon-shouye-yes"></span>
+                    <p>添加订单</p>
+                </li>
+                <li>
+                    <span class="iconfont icon-shouye-yes"></span>
+                    <p>取消订单处理</p>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <span class="iconfont icon-shouye-yes list"></span>
+            <p>用户</p>
+            <ul>
+                <li>
+                    <span class="iconfont icon-shouye-yes list"></span>
+                    <p>用户列表</p>
+                </li>
+                <li>
+                    <span class="iconfont icon-shouye-yes list"></span>
+                    <p>添加用户</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="img-box">
+        <ul class="img-list">
+            <li>
+                <img src="images/home1.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/home2.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/home3.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/home4.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+    <script>
+        var oh2 = document.getElementsByTagName("p");
+        for (var i = 0; i < oh2.length; i++) {
+            oh2[i].flag = false;
+            oh2[i].onclick = function () {
+                var oul = next(this);
+                if (this.flag) {
+                    oul.style.display = "none";
+                }
+                else {
+                    oul.style.display = "block";
+                }
+                this.flag = !this.flag;
+            }
+        }
+        function next(elem) {
+            do {
+                elem = elem.nextSibling;
+            } while (elem && elem.nodeType != 1)
+            return elem;
+        }
+    </script>
+</body>
+
+</html>
