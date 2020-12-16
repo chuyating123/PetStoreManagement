@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="icon/iconfont.css">
+    <link rel="stylesheet" href="icon/icon_1/iconfont.css">
     <style>
         * {
             padding: 0;
@@ -13,16 +14,17 @@
         }
 
         #nav {
-            height: 721px;
+            height: 1000px;
             width: 180px;
             background-color: rgb(48, 65, 86);
             list-style: none;
             float: left;
         }
 
-        #nav div {
+
+        #nav .nav_list {
             width: 100%;
-            margin-left: 20px;
+            margin-left: 30px;
             margin-top: 20px;
         }
 
@@ -61,11 +63,140 @@
             font-size: 16px;
         }
 
+        .left {
+            position: absolute;
+            top: 30px;
+            left: 200px;
+        }
+
+        .left ul {
+            list-style: none;
+            width: 200px;
+            height: 450px;
+            position: relative;
+            left: 10px;
+            top: 20px;
+            float: left;
+        }
+
+        .left ul li {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .left .pet {
+            float: left;
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        .left .pet span {
+            width: 40px;
+            height: 40px;
+            display: block;
+            border-radius: 40px;
+            line-height: 40px;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .pet .dog {
+            background: #fd9d21;
+        }
+
+        .pet .cat {
+            background: #ff6767;
+        }
+
+        .pet .rabbit {
+            background: #8a90fa;
+        }
+
+        .left .pet_box span {
+            margin-right: 5px;
+        }
+
+        .right {
+            position: absolute;
+            right: 20px;
+            top: 30px;
+        }
+
+        .right ul {
+            width: 200px;
+            height: 450px;
+            position: relative;
+            right: 10px;
+            top: 20px;
+            list-style: none;
+            float: left;
+        }
+
+        .right ul li {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .right .pet {
+            float: left;
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        .right .pet span {
+            width: 40px;
+            height: 40px;
+            display: block;
+            border-radius: 40px;
+            line-height: 40px;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .right .mouse {
+            background: #ff80c2;
+        }
+
+        .right .pig {
+            background: #fd9d21;
+        }
+
+        .right .more {
+            background: #00d3be;
+        }
+
+        #container .introduce .left_introduce {
+            list-style: none;
+            position: absolute;
+            left: 210px;
+            top: 500px;
+        }
+
+        #container .introduce .right_introduce {
+            list-style: none;
+            position: absolute;
+            right: 0px;
+            top: 480px;
+        }
+        .introduce li{
+            width: 500px;
+            height: 300px;
+        }
+        .introduce li img{
+            float: left;
+            margin-right: 40px;
+        }
         .img-box {
             position: relative;
             margin: auto;
-            width: 1000px;
-            height: 600px;
+            width: 800px;
+            height: 450px;
             text-align: center;
             overflow: hidden;
         }
@@ -79,13 +210,13 @@
 
         /*//自动播放*/
         .img-box .img-list {
-            animation: marginLeft 12s infinite;
+            animation: marginLeft 10s infinite;
         }
 
         .img-box li {
             float: left;
-            width: 1000px;
-            height: 600px;
+            width: 800px;
+            height: 450px;
         }
 
         .img-list img {
@@ -103,49 +234,111 @@
             }
 
             25.5% {
-                margin-left: -1000px;
+                margin-left: -800px;
             }
 
             46% {
-                margin-left: -1000px;
+                margin-left: -800px;
             }
 
             51% {
-                margin-left: -2000px;
+                margin-left: -1600px;
             }
 
             71.5% {
-                margin-left: -2000px;
+                margin-left: -1600px;
             }
 
             76.5% {
-                margin-left: -3000px;
+                margin-left: -2400px;
             }
 
             99.999% {
-                margin-left: -3000px;
+                margin-left: -2400px;
             }
 
             100% {
                 margin-left: 0;
             }
         }
+
+        body {
+            perspective: 1400px;
+        }
+
+        #content {
+            width: 60px;
+            height: 60px;
+            margin: 50px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: run 5s linear infinite;
+        }
+
+        @keyframes run {
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        #content img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .div1 {
+            transform: rotateY(180deg) translateZ(30px);
+        }
+
+        .div2 {
+            transform: rotateY(90deg) translateZ(30px);
+        }
+
+        .div3 {
+            transform: translateZ(30px);
+        }
+
+        .div4 {
+            transform: rotateY(-90deg) translateZ(30px);
+        }
+
+        .div5 {
+            transform: rotateX(90deg) translateZ(30px);
+        }
+
+        .div6 {
+            transform: rotateX(90deg) translateZ(-30px);
+        }
     </style>
 </head>
 
 <body>
     <div id="nav">
-        <div>
+        <div id="content">
+            <img class="div1" src="./images/home1.jpg" alt="">
+            <img class="div2" src="./images/home2.jpg" alt="">
+            <img class="div3" src="./images/home3.jpg" alt="">
+            <img class="div4" src="./images/home4.jpg" alt="">
+            <img class="div5" src="./images/img/1.jpg" alt="">
+            <img class="div6" src="./images/img/2.jpg" alt="">
+        </div>
+        <div class="nav_list">
             <span class="iconfont icon-shouye-yes"></span>
             <p>首页</p>
             <ul>
                 <li>
                     <span class="iconfont icon-shouye-yes"></span>
-                    <a href="photo.html"><p>宠物美图</p></a>
+                    <a href="photo.html">
+                        <p>宠物美图</p>
+                    </a>
                 </li>
             </ul>
         </div>
-        <div>
+        <div class="nav_list">
             <span class="iconfont icon-shouye-yes"></span>
             <p>宠物</p>
             <ul>
@@ -163,7 +356,7 @@
                 </li>
             </ul>
         </div>
-        <div>
+        <div class="nav_list">
             <span class="iconfont icon-shouye-yes"></span>
             <p>订单</p>
             <ul>
@@ -181,7 +374,7 @@
                 </li>
             </ul>
         </div>
-        <div>
+        <div class="nav_list">
             <span class="iconfont icon-shouye-yes list"></span>
             <p>用户</p>
             <ul>
@@ -196,21 +389,253 @@
             </ul>
         </div>
     </div>
-    <div class="img-box">
-        <ul class="img-list">
-            <li>
-                <img src="images/home1.jpg" alt="">
-            </li>
-            <li>
-                <img src="images/home2.jpg" alt="">
-            </li>
-            <li>
-                <img src="images/home3.jpg" alt="">
-            </li>
-            <li>
-                <img src="images/home4.jpg" alt="">
-            </li>
-        </ul>
+    <div id="container">
+        <div class="left">
+            <ul>
+                <li>
+                    <div class="pet">
+                        <span class="iconfont icon-gou dog"></span>
+                        <p>狗狗</p>
+                    </div>
+                    <div class="pet_box">
+                        <span>哈士奇</span>
+                        <span>贵宾犬</span>
+                        <span>松狮</span>
+                        <span>吉娃娃</span>
+                        <span>边牧</span>
+                        <span>金毛</span>
+                        <span>德牧</span>
+                        <span>博美</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="pet">
+                        <span class="iconfont icon-mao cat"></span>
+                        <p>猫咪</p>
+                    </div>
+                    <div class="pet_box">
+                        <span>金吉拉</span>
+                        <span>波斯猫</span>
+                        <span>英国短毛猫</span>
+                        <span>折耳猫</span>
+                        <span>布偶猫</span>
+                        <span>蓝猫</span>
+                        <span>加菲猫</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="pet">
+                        <span class="iconfont icon-tuzi rabbit"></span>
+                        <p>兔子</p>
+                    </div>
+                    <div class="pet_box">
+                        <span>金吉拉兔</span>
+                        <span>波兰兔</span>
+                        <span>海棠兔</span>
+                        <span>白兔<span>
+                                <span>荷兰兔</span>
+                                <span>垂耳兔</span>
+                                <span>安哥拉兔</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="img-box">
+            <ul class="img-list">
+                <li>
+                    <img src="images/home1.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/home2.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/home3.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/home4.jpg" alt="">
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul>
+                <li>
+                    <div class="pet">
+                        <span class="iconfont icon-cangshu mouse"></span>
+                        <p>老鼠</p>
+                    </div>
+                    <div class="pet_box">
+                        <span>松鼠</span>
+                        <span>天竺鼠</span>
+                        <span>金花鼠</span>
+                        <span>日本小鼬鼠</span>
+                        <span>金丝熊</span>
+                        <span>布丁仓鼠</span>
+                        <span>三线仓鼠</span>
+                        <span>龙猫</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="pet">
+                        <span class="iconfont icon-zhu pig"></span>
+                        <p>猪猪</p>
+                    </div>
+                    <div class="pet_box">
+                        <span>迷你猪</span>
+                        <span>越南大肚猪</span>
+                        <span>胡利亚尼猪</span>
+                        <span>几内亚猪</span>
+                        <span>茶杯猪</span>
+                        <span>微型猪</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="pet">
+                        <span class="iconfont icon-qita more"></span>
+                        <p>其他</p>
+                    </div>
+                    <div class="pet_box">
+                        <span>白玉鸟</span>
+                        <span>金丝雀</span>
+                        <span>巴西彩龟</span>
+                        <span>长寿龟</span>
+                        <span>神仙鱼</span>
+                        <span>罗非鱼</span>
+                        <span>鹦鹉鱼</span>
+                        <span>豹纹壁虎</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="introduce">
+            <ul class="left_introduce">
+                <li>
+                    <div class="dog1">
+                        <img src="images/introduce1.jpg" alt="">
+                        <div class="desc">
+                            <h2>澳大利亚牧羊犬</h2>
+                            <p>
+                                <span class="itm">别名:</span>
+                                <span class="itm-txt">澳牧</span>
+                            </p>
+                            <p>
+                                <span class="itm">原产地:</span>
+                                <span class="itm-txt">美国</span>
+                            </p>
+                            <p>
+                                <span class="itm">体重:</span>
+                                <span class="itm-txt">16~32公斤</span>
+                            </p>
+                            <p>
+                                <span class="itm">寿命:</span>
+                                <span class="itm-txt">10~15年</span>
+                            </p>
+                            <p>
+                                <span class="itm">肩高:</span>
+                                <span class="itm-txt">澳牧</span>
+                            </p>
+                            <p>
+                                <span class="itm">体型:</span>
+                                <span class="itm-txt">51~58厘米</span>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dog2">
+                        <img src="images/introduce2.jpg" alt="">
+                        <div class="desc">
+                            <h2>阿拉斯加雪橇犬</h2>
+                            <p>
+                                <span class="itm">别名:</span>
+                                <span class="itm-txt">阿拉斯加马拉缪特;阿拉斯加马拉穆</span>
+                            </p>
+                            <p>
+                                <span class="itm">原产地:</span>
+                                <span class="itm-txt">美国</span>
+                            </p>
+                            <p>
+                                <span class="itm">体重:</span>
+                                <span class="itm-txt">39~56公斤</span>
+                            </p>
+                            <p>
+                                <span class="itm">寿命:</span>
+                                <span class="itm-txt">10~15年</span>
+                            </p>
+                            <p>
+                                <span class="itm">肩高:</span>
+                                <span class="itm-txt">58~71厘米</span>
+                            </p>
+                            <p>
+                                <span class="itm">体型:</span>
+                                <span class="itm-txt">大型</span>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="right_introduce">
+                <li>
+                    <div>
+                        <img src="images/introduce3.jpg" alt="">
+                        <div class="desc">
+                            <h2>阿契安吉蓝猫</h2>
+                            <p>
+                                <span class="itm">别名:</span>
+                                <span class="itm-txt"> 阿契安吉蓝猫;马耳他猫</span>
+                            </p>
+                            <p>
+                                <span class="itm">原产地:</span>
+                                <span class="itm-txt">俄罗斯</span>
+                            </p>
+                            <p>
+                                <span class="itm">体重:</span>
+                                <span class="itm-txt">3~6公斤</span>
+                            </p>
+                            <p>
+                                <span class="itm">寿命:</span>
+                                <span class="itm-txt">8~12年</span>
+                            </p>
+                            <p>
+                                <span class="itm">体重:</span>
+                                <span class="itm-txt">4.5~8公斤</span>
+                            </p>
+                            <p>
+                                <span class="itm">体型:</span>
+                                <span class="itm-txt">中型</span>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dog2">
+                        <img src="images/introduce4.png" alt="">
+                        <div class="desc">
+                            <h2>布偶猫</h2>
+                            <p>
+                                <span class="itm">别名:</span>
+                                <span class="itm-txt">布娃娃猫;玩偶猫</span>
+                            </p>
+                            <p>
+                                <span class="itm">原产地:</span>
+                                <span class="itm-txt">美国</span>
+                            </p>
+                            <p>
+                                <span class="itm">体重:</span>
+                                <span class="itm-txt">4.5~9公斤</span>
+                            </p>
+                            <p>
+                                <span class="itm">寿命:</span>
+                                <span class="itm-txt">澳牧</span>
+                            </p>
+                            <p>
+                                <span class="itm">体型:</span>
+                                <span class="itm-txt">大型</span>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
     <script>
         var oh2 = document.getElementsByTagName("p");
